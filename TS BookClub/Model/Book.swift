@@ -12,17 +12,19 @@ import SwiftData
 class Book {
     var title: String
     
-    var contentDescription: String?
+    @Attribute(originalName: "contentDescription")
+    var content: String?
     
     var rating: Rating
     
     var author: Author?
     
+    @Transient
     var lastViewed: Date?
     
     init(title: String, content: String? = nil, rating: Rating = .none, author: Author?) {
         self.title = title
-        self.contentDescription = content
+        self.content = content
         self.rating = rating
         self.author = author
     }

@@ -10,10 +10,12 @@ import SwiftData
 
 @Model
 class Author {
+    @Attribute(.unique)
     var name: String
     
     var isFavorite: Bool
     
+    @Relationship(deleteRule: .cascade, inverse: \Book.author)
     var books: [Book] = []
     
     init(name: String, isFavorite: Bool) {

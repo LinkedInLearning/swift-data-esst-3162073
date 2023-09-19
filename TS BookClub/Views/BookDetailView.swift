@@ -18,7 +18,7 @@ struct BookDetailView: View {
                 Text(book.author?.name ?? "-")
                     .italic()
             }
-            if let content = book.contentDescription, !content.isEmpty {
+            if let content = book.content, !content.isEmpty {
                 Section {
                     Text(content)
                 }
