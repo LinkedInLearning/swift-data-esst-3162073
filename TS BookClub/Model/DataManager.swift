@@ -25,6 +25,17 @@ class DataManager: ObservableObject {
         }
     }
     
+    @MainActor func books(searchString: String = "") -> [Book] {
+        let booksPredicate = #Predicate<Book> {
+            searchString.isEmpty ? true : $0.title.contains(searchString)
+        }
+        let bookFetchDescriptor = FetchDescriptor<Book>(predicate: booksPredicate, sortBy: [SortDescriptor(\Book.title)])
+        if let books = try? modelContext.fetch(bookFetchDescriptor) {
+            return books
+        }
+        return []
+    }
+    
     @MainActor func createBook(title: String, content: String?, rating: Rating, author: Author?) {
         let book = Book(title: title, content: content, rating: rating, author: author)
         modelContext.insert(book)

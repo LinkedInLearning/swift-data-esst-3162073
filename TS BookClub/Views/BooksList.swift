@@ -42,7 +42,11 @@ struct BooksList: View {
 struct SearchableBooksView: View {
     private let searchString: String
     
-    private var books: [Book] = []
+    private var books: [Book] {
+        dataManager.books(searchString: searchString)
+    }
+    
+    @EnvironmentObject private var dataManager: DataManager
     
     var body: some View {
         ForEach(books, id: \.title) { book in
