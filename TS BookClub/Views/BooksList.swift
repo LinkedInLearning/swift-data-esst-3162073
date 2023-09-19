@@ -77,7 +77,7 @@ struct SearchableBooksView: View {
     private func deleteBook(indexSet: IndexSet) {
         for index in indexSet {
             let book = books[index]
-            // TODO: Delete book.
+            dataManager.deleteBook(book)
         }
     }
 }

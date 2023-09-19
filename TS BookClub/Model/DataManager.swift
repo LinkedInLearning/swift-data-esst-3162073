@@ -41,4 +41,8 @@ class DataManager: ObservableObject {
         modelContext.insert(book)
         objectWillChange.send()
     }
+    
+    @MainActor func deleteBook(_ book: Book) {
+        modelContext.delete(book)
+    }
 }
