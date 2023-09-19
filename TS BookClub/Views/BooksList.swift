@@ -41,9 +41,7 @@ struct BooksList: View {
 }
 
 struct SearchableBooksView: View {
-    private let searchString: String
-    
-    private var books: [Book] = []
+    @Query private var books: [Book]
     
     @Environment(\.modelContext) private var modelContext
     
@@ -70,7 +68,9 @@ struct SearchableBooksView: View {
     }
     
     init(searchString: String) {
-        self.searchString = searchString
+        _books = Query(filter: #Predicate<Book> {
+            searchString.isEmpty ? true : $0.title.contains(searchString)
+        })
     }
     
     private func deleteBook(indexSet: IndexSet) {

@@ -31,9 +31,7 @@ struct AuthorsList: View {
 }
 
 struct FilteredAuthorsView: View {
-    private let showOnlyFavorites: Bool
-    
-    private var authors: [Author] = []
+    @Query(sort: [SortDescriptor(\Author.name)]) private var authors: [Author]
     
     @Environment(\.modelContext) private var modelContext
     
@@ -67,7 +65,11 @@ struct FilteredAuthorsView: View {
     }
     
     init(showOnlyFavorites: Bool = false) {
-        self.showOnlyFavorites = showOnlyFavorites
+        if showOnlyFavorites {
+            _authors = Query(filter: #Predicate<Author> {
+                $0.isFavorite
+            })
+        }
     }
     
     private func deleteAuthor(indexSet: IndexSet) {

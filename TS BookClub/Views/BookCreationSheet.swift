@@ -15,7 +15,11 @@ struct BookCreationSheet: View {
     
     @State private var newAuthorName = ""
     
+    @State private var author: Author?
+    
     @Binding var showSheet: Bool
+    
+    @Query private var authors: [Author]
     
     @Environment(\.modelContext) private var modelContext
     
@@ -60,12 +64,36 @@ struct BookCreationSheet: View {
         }  header: {
             Text("Author")
         }
+        Section {
+            ForEach(authors) { author in
+                Button(action: {
+                    self.author = author
+                    newAuthorName = ""
+                }, label: {
+                    HStack {
+                        Text(author.name)
+                        if self.author == author {
+                            Spacer()
+                            Image(systemName: "checkmark")
+                        }
+                    }
+                })
+                .tint(.primary)
+            }
+        }
+        .onChange(of: newAuthorName) { _, newValue in
+            if !newValue.isEmpty {
+                author = nil
+            }
+        }
     }
     
     private var saveButton: some View {
         Button("Save") {
-            let newAuthor = Author(name: newAuthorName, isFavorite: false)
-            let book = Book(title: title, content: content, rating: .none, author: newAuthor)
+            if author == nil && !newAuthorName.isEmpty {
+                author = Author(name: newAuthorName, isFavorite: false)
+            }
+            let book = Book(title: title, content: content, rating: .none, author: author)
             modelContext.insert(book)
             showSheet = false
         }
