@@ -16,6 +16,8 @@ struct BookCreationSheet: View {
     
     @Binding var showSheet: Bool
     
+    @EnvironmentObject private var dataManager: DataManager
+    
     var body: some View {
         NavigationStack {
             Form {
@@ -61,7 +63,8 @@ struct BookCreationSheet: View {
     
     private var saveButton: some View {
         Button("Save") {
-            // TODO: Save book and author.
+            let newAuthor = Author(name: newAuthorName, isFavorite: false)
+            dataManager.createBook(title: title, content: content, rating: .none, author: newAuthor)
             showSheet = false
         }
         .bold()

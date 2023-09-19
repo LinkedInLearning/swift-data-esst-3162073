@@ -24,4 +24,10 @@ class DataManager: ObservableObject {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }
+    
+    @MainActor func createBook(title: String, content: String?, rating: Rating, author: Author?) {
+        let book = Book(title: title, content: content, rating: rating, author: author)
+        modelContext.insert(book)
+        objectWillChange.send()
+    }
 }
