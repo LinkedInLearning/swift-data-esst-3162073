@@ -35,6 +35,8 @@ struct FilteredAuthorsView: View {
     
     private var authors: [Author] = []
     
+    @Environment(\.modelContext) private var modelContext
+    
     var body: some View {
         Section {
             ForEach(authors, id: \.name) { author in
@@ -71,14 +73,14 @@ struct FilteredAuthorsView: View {
     private func deleteAuthor(indexSet: IndexSet) {
         for index in indexSet {
             let author = authors[index]
-            // TODO: Delete author.
+            modelContext.delete(author)
         }
     }
     
     private func deleteBook(from author: Author, indexSet: IndexSet) {
         for index in indexSet {
             let book = author.books[index]
-            // TODO: Delete book.
+            modelContext.delete(book)
         }
     }
 }

@@ -5,6 +5,7 @@
 //  Created by Thomas Sillmann on 01.09.23.
 //
 
+import SwiftData
 import SwiftUI
 
 struct BookCreationSheet: View {
@@ -16,7 +17,7 @@ struct BookCreationSheet: View {
     
     @Binding var showSheet: Bool
     
-    @EnvironmentObject private var dataManager: DataManager
+    @Environment(\.modelContext) private var modelContext
     
     var body: some View {
         NavigationStack {
@@ -64,7 +65,8 @@ struct BookCreationSheet: View {
     private var saveButton: some View {
         Button("Save") {
             let newAuthor = Author(name: newAuthorName, isFavorite: false)
-            dataManager.createBook(title: title, content: content, rating: .none, author: newAuthor)
+            let book = Book(title: title, content: content, rating: .none, author: newAuthor)
+            modelContext.insert(book)
             showSheet = false
         }
         .bold()

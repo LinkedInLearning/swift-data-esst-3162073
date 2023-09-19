@@ -5,6 +5,7 @@
 //  Created by Thomas Sillmann on 01.09.23.
 //
 
+import SwiftData
 import SwiftUI
 
 struct BooksList: View {
@@ -42,11 +43,9 @@ struct BooksList: View {
 struct SearchableBooksView: View {
     private let searchString: String
     
-    private var books: [Book] {
-        dataManager.books(searchString: searchString)
-    }
+    private var books: [Book] = []
     
-    @EnvironmentObject private var dataManager: DataManager
+    @Environment(\.modelContext) private var modelContext
     
     var body: some View {
         ForEach(books, id: \.title) { book in
@@ -77,7 +76,7 @@ struct SearchableBooksView: View {
     private func deleteBook(indexSet: IndexSet) {
         for index in indexSet {
             let book = books[index]
-            dataManager.deleteBook(book)
+            modelContext.delete(book)
         }
     }
 }
