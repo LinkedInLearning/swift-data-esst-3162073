@@ -19,6 +19,7 @@
 		BDE636A42AB9A7AE004EA005 /* BooksList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE6369F2AB9A7AE004EA005 /* BooksList.swift */; };
 		BDE636A52AB9A7AE004EA005 /* BookCreationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE636A02AB9A7AE004EA005 /* BookCreationSheet.swift */; };
 		BDE636A62AB9A7AE004EA005 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE636A12AB9A7AE004EA005 /* BookDetailView.swift */; };
+		BDE636AA2AB9ADE0004EA005 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE636A92AB9ADE0004EA005 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		BDE6369F2AB9A7AE004EA005 /* BooksList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksList.swift; sourceTree = "<group>"; };
 		BDE636A02AB9A7AE004EA005 /* BookCreationSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCreationSheet.swift; sourceTree = "<group>"; };
 		BDE636A12AB9A7AE004EA005 /* BookDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
+		BDE636A92AB9ADE0004EA005 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				BDE636982AB9A7A6004EA005 /* Author.swift */,
 				BDE636972AB9A7A6004EA005 /* Book.swift */,
 				BDE636992AB9A7A6004EA005 /* Rating.swift */,
+				BDE636A92AB9ADE0004EA005 /* DataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				BDE6369C2AB9A7A6004EA005 /* Rating.swift in Sources */,
 				BDE636A42AB9A7AE004EA005 /* BooksList.swift in Sources */,
 				BDE6369B2AB9A7A6004EA005 /* Author.swift in Sources */,
+				BDE636AA2AB9ADE0004EA005 /* DataManager.swift in Sources */,
 				BDE6369A2AB9A7A6004EA005 /* Book.swift in Sources */,
 				BDE636A32AB9A7AE004EA005 /* RatingView.swift in Sources */,
 			);
