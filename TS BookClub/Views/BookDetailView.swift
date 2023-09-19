@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BookDetailView: View {
-    @ObservedObject var book: Book
+    @Bindable var book: Book
     
     var body: some View {
         Form {

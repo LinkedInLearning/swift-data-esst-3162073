@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import SwiftData
 
-class Book: ObservableObject {
+@Model
+class Book {
     var title: String
     
     var contentDescription: String?

@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import SwiftData
 
-class Author: ObservableObject {
+@Model
+class Author {
     var name: String
     
     var isFavorite: Bool

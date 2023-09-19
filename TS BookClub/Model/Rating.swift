@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Rating: Int, Identifiable {
+enum Rating: Int, Codable, Identifiable {
     case none
     case oneStar
     case twoStars
