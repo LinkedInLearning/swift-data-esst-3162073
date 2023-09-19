@@ -6,15 +6,24 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct TS_BookClubApp: App {
-    @StateObject private var dataManager = DataManager()
+    var sharedModelContainer: ModelContainer = {
+        let schema = Schema([Author.self, Book.self])
+        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+        do {
+            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+        } catch {
+            fatalError("Could not create ModelContainer: \(error)")
+        }
+    }()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
-        .environmentObject(dataManager)
+        .modelContainer(sharedModelContainer)
     }
 }
