@@ -9,7 +9,25 @@ import Foundation
 import SwiftData
 
 enum TSBookClubMigrationPlan: SchemaMigrationPlan {
-    
+    static var schemas: [any VersionedSchema.Type] {
+            [TSBookClubSchemaV1.self, TSBookClubSchemaV2.self, TSBookClubSchemaV3.self]
+        }
+        
+        static var stages: [MigrationStage] {
+            [migrateV1toV2, migrateV2toV3]
+        }
+        
+        static let migrateV1toV2 = MigrationStage.custom(
+            fromVersion: TSBookClubSchemaV1.self,
+            toVersion: TSBookClubSchemaV2.self,
+            willMigrate: { context in
+                handleAuthorDuplicates(in: context)
+                try? context.save()
+            },
+            didMigrate: nil
+        )
+        
+        static let migrateV2toV3 = MigrationStage.lightweight(fromVersion: TSBookClubSchemaV2.self, toVersion: TSBookClubSchemaV3.self)
 }
 
 extension TSBookClubMigrationPlan {
