@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD8878FE2ABAC5E300023C30 /* TSBookClubSchemaV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8878FD2ABAC5E300023C30 /* TSBookClubSchemaV1.swift */; };
+		BD8879012ABAC6D600023C30 /* TSBookClubSchemaV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8879002ABAC6D600023C30 /* TSBookClubSchemaV2.swift */; };
+		BD8879032ABACAE200023C30 /* TSBookClubSchemaV3.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8879022ABACAE200023C30 /* TSBookClubSchemaV3.swift */; };
 		BDE636742AB9A4E9004EA005 /* TS_BookClubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE636732AB9A4E9004EA005 /* TS_BookClubApp.swift */; };
 		BDE636762AB9A4E9004EA005 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE636752AB9A4E9004EA005 /* ContentView.swift */; };
 		BDE636782AB9A4EA004EA005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDE636772AB9A4EA004EA005 /* Assets.xcassets */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD8878FD2ABAC5E300023C30 /* TSBookClubSchemaV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSBookClubSchemaV1.swift; sourceTree = "<group>"; };
+		BD8879002ABAC6D600023C30 /* TSBookClubSchemaV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSBookClubSchemaV2.swift; sourceTree = "<group>"; };
+		BD8879022ABACAE200023C30 /* TSBookClubSchemaV3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSBookClubSchemaV3.swift; sourceTree = "<group>"; };
 		BDE636702AB9A4E9004EA005 /* TS BookClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TS BookClub.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE636732AB9A4E9004EA005 /* TS_BookClubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TS_BookClubApp.swift; sourceTree = "<group>"; };
 		BDE636752AB9A4E9004EA005 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,6 +56,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD8878FF2ABAC6AF00023C30 /* Migration */ = {
+			isa = PBXGroup;
+			children = (
+				BD8878FD2ABAC5E300023C30 /* TSBookClubSchemaV1.swift */,
+				BD8879002ABAC6D600023C30 /* TSBookClubSchemaV2.swift */,
+				BD8879022ABACAE200023C30 /* TSBookClubSchemaV3.swift */,
+			);
+			path = Migration;
+			sourceTree = "<group>";
+		};
 		BDE636672AB9A4E9004EA005 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +109,7 @@
 				BDE636972AB9A7A6004EA005 /* Book.swift */,
 				BDE636992AB9A7A6004EA005 /* Rating.swift */,
 				BDE636A92AB9ADE0004EA005 /* DataManager.swift */,
+				BD8878FF2ABAC6AF00023C30 /* Migration */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,7 +204,10 @@
 				BDE636A22AB9A7AE004EA005 /* AuthorsList.swift in Sources */,
 				BDE6369C2AB9A7A6004EA005 /* Rating.swift in Sources */,
 				BDE636A42AB9A7AE004EA005 /* BooksList.swift in Sources */,
+				BD8879012ABAC6D600023C30 /* TSBookClubSchemaV2.swift in Sources */,
 				BDE6369B2AB9A7A6004EA005 /* Author.swift in Sources */,
+				BD8879032ABACAE200023C30 /* TSBookClubSchemaV3.swift in Sources */,
+				BD8878FE2ABAC5E300023C30 /* TSBookClubSchemaV1.swift in Sources */,
 				BDE636AA2AB9ADE0004EA005 /* DataManager.swift in Sources */,
 				BDE6369A2AB9A7A6004EA005 /* Book.swift in Sources */,
 				BDE636A32AB9A7AE004EA005 /* RatingView.swift in Sources */,
