@@ -1,6 +1,6 @@
-# [DE-Kursname hier eintragen]
+# SwiftData lernen
 
-Dies ist das Repository für den **LinkedIn Learning** Kurs `[COURSENAME]`. Den gesamten Kurs finden Sie auf [LinkedIn Learning][lil-course-url].
+Dies ist das Repository für den **LinkedIn Learning** Kurs `SwiftData lernen`. Den gesamten Kurs finden Sie auf [LinkedIn Learning][lil-course-url].
 
 ![COURSENAME][lil-thumbnail-url] 
 
@@ -30,15 +30,15 @@ Dieses Problem lösen Sie wie folgt:
 ## Installation
 
 1. Um diese Übungsdateien nutzen zu können, müssen Sie folgendes installiert haben:
-   - [list of requirements for course]
+   - Xcode (ab Version 15)
 2. Klonen Sie das Repository in Ihre lokale Maschine unter Verwendung von terminal (Mac), CMD (Windows) oder ein anderes Werkzeug mit grafischer Bedienoberfläche wie SourceTree.
 3. [Course-specific instructions]
 
 ### Autor
 
-**[Name hier eintragen]**
+**Thomas Sillmann**
 
-_[Berufsbezeichnung hier eintragen]_
+_Autor und App-Entwickler_
 
 Sehen Sie sich andere Kurse des Autors auf [LinkedIn Learning](https://www.linkedin.com/learning/instructors/name_des_autors) an.
 
