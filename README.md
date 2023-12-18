@@ -41,7 +41,7 @@ Dieses Problem lösen Sie wie folgt:
 
 _Autor und App-Entwickler_
 
-Sehen Sie sich andere Kurse des Autors auf [LinkedIn Learning](https://www.linkedin.com/learning/instructors/thomas_sillmann) an.
+Sehen Sie sich andere Kurse des Autors auf [LinkedIn Learning](https://www.linkedin.com/learning/instructors/thomas-sillmann) an.
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
 [lil-course-url]: https://www.linkedin.com/learning/swiftdata-lernen
